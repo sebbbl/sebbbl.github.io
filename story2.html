@@ -140,6 +140,11 @@ body {
 #ui-bar {
     background-color: rgba(0, 0, 0, .8);
 }
+audio, canvas, progress, video {
+    max-width: 80%;
+    vertical-align: middle;
+}
+
 
 
 
@@ -258,6 +263,7 @@ macros.emptyInv = {
 
 
 
+
 </script><tw-passagedata pid="1" name="Démarrer la partie" tags="" position="216,34" size="100,100">Il y a un coffre devant vous. &lt;&lt;if $chest is 1&gt;&gt;Le coffre est déjà ouvert 
 !![[Partir de là]] &lt;&lt;else&gt;&gt;
 !![[Ouvrir le coffre]]&lt;&lt;/if&gt;&gt;
@@ -274,25 +280,25 @@ macros.emptyInv = {
 &lt;img src=&quot;https://66.media.tumblr.com/28475b28b28fe5a2ea6a5cd3a2feef21/tumblr_nq4eefKvuc1rhosl1o1_500.gif&quot; width=&quot;50%&quot;&gt;</tw-passagedata><tw-passagedata pid="6" name="Courir" tags="" position="97,188" size="100,100">Vous courez jusqu&#39;à une cabane.
 !![[Entrer|Cabane]]
 &lt;img src=&quot;https://media0.giphy.com/media/3o7ZetIsjtbkgNE1I4/giphy.gif?cid=790b76115cd53b186c36616a67981854&amp;rid=giphy.gif&quot; width=&quot;70%&quot;&gt;</tw-passagedata><tw-passagedata pid="7" name="StoryCaption" tags="" position="982,88" size="100,100">
-@@text-align: left;font-size: 0.9em;
+@@text-align: left;font-size: 0.8em;
 
-|Exp :         | $exp|
-|Treasure :| $coins|
-|-----------------------|--------|
-|Dexterity :| $dex|
-|Concentration :| $concent|
-|Knowledge :| $know|
-|Botanic :| $bota|
-|Obedience :| $obed|
-|Invocation :| $invoc|
-|Luck :| $luck|
-|Empathy :| $empa|
-|Telepathy :| $telepath|
-|Telekinesis :| $kinesis|
-|Clairvoyance :| $clair|
-|Reanimation :| $rea|
-|Possession :| $possess|
-|Curse :| $curse|
+|Exp:         | $exp &lt;progress @value=&quot;$exp&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Treasure:| $coins|
+|&lt;br&gt;||
+|Dexterity:| $dex &lt;progress @value=&quot;$clair&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Concentration:| $concent &lt;progress @value=&quot;$concent&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Knowledge:| $know &lt;progress @value=&quot;$know&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Botanic:| $bota &lt;progress @value=&quot;$bota&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Obedience:| $obed &lt;progress @value=&quot;$obed&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Invocation:| $invoc &lt;progress @value=&quot;$invoc&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Luck:| $luck &lt;progress @value=&quot;$luck&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Empathy:| $empa &lt;progress @value=&quot;$empa&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Telepathy:| $telepath &lt;progress @value=&quot;$telepath&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Telekinesis:| $kinesis &lt;progress @value=&quot;$kinesis&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Clairvoyance:| $clair &lt;progress @value=&quot;$clair&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Reanimation:| $rea &lt;progress @value=&quot;$rea&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Possession:| $possess &lt;progress @value=&quot;$possess&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
+|Curse:| $curse &lt;progress @value=&quot;$curse&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
 ----
 @@
 &lt;&lt;button [[Inventory]]&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="StoryInit" tags="" position="1143,90" size="100,100">&lt;&lt;set $chest to 0; $exp to 10 ; $coins to 0 ; $dex to 0 ; $concent to 0 ; $know to 0 ; $bota to 0 ; $obed to 0 ; $invoc to 0 ; $luck to 0 ; $empa to 0 ; $telepath to 0 ; $kinesis to 0 ; $clair to 0 ; $rea to 0 ; $possess to 0 ; $curse to 0&gt;&gt;
