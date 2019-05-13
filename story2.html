@@ -100,8 +100,11 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Lorelei&#39;s Prophecy" startnode="2" creator="Twine" creator-version="2.3.1" ifid="881CCC31-6507-4FE6-8DD6-3A235FF43A0B" zoom="1" format="SugarCube" format-version="2.28.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.passage {
-    line-height: 1.75;
+	<div id="store-area" hidden><tw-storydata name="Lorelei&#39;s Prophecy" startnode="2" creator="Twine" creator-version="2.3.1" ifid="881CCC31-6507-4FE6-8DD6-3A235FF43A0B" zoom="1" format="SugarCube" format-version="2.28.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css?family=Special+Elite|Stylish');
+.passage {
+    font-family: 'Special Elite', cursive;
+    font-size: 24px;
+    line-height: 1.2;
     text-align: center;
     -o-transition: opacity .4s ease-in;
     transition: opacity .4s ease-in;
@@ -137,6 +140,9 @@ body {
 #ui-bar {
     background-color: transparent;
 }
+
+
+
 
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.history.controls = false;
@@ -247,6 +253,9 @@ macros.emptyInv = {
 
 
 
+
+
+
 </script><tw-passagedata pid="1" name="Démarrer la partie" tags="" position="216,34" size="100,100">Il y a un coffre devant vous. &lt;&lt;if $chest is 1&gt;&gt;Le coffre est déjà ouvert 
 !![[Partir de là]] &lt;&lt;else&gt;&gt;
 !![[Ouvrir le coffre]]&lt;&lt;/if&gt;&gt;
@@ -263,10 +272,11 @@ macros.emptyInv = {
 &lt;img src=&quot;https://66.media.tumblr.com/28475b28b28fe5a2ea6a5cd3a2feef21/tumblr_nq4eefKvuc1rhosl1o1_500.gif&quot; width=&quot;50%&quot;&gt;</tw-passagedata><tw-passagedata pid="6" name="Courir" tags="" position="97,188" size="100,100">Vous courez jusqu&#39;à une cabane.
 !![[Entrer|Cabane]]
 &lt;img src=&quot;https://media0.giphy.com/media/3o7ZetIsjtbkgNE1I4/giphy.gif?cid=790b76115cd53b186c36616a67981854&amp;rid=giphy.gif&quot; width=&quot;70%&quot;&gt;</tw-passagedata><tw-passagedata pid="7" name="StoryCaption" tags="" position="982,88" size="100,100">
-@@text-align: left;
+@@text-align: left;font-size: 0.9em;
+
 |Exp :         | $exp|
 |Treasure :| $coins|
-|--------------------|--------|
+|-----------------------|--------|
 |Dexterity :| $dex|
 |Concentration :| $concent|
 |Knowledge :| $know|
@@ -290,10 +300,11 @@ macros.emptyInv = {
 !!&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Cabane" tags="" position="31,344" size="100,100">&lt;&lt;if $inventory.indexOf(&quot;Un oeil dans un bocal&quot;) == -1&gt;&gt;Vous voyez un oeil dans un bocal.
 !![[Prendre le bocal.]]&lt;&lt;else&gt;&gt;Il n&#39;y a pas grand-chose ici.&lt;&lt;endif&gt;&gt;
 !![[Retour au début|init]]</tw-passagedata><tw-passagedata pid="11" name="Prendre le bocal." tags="" position="191,345" size="100,100">&lt;&lt;addToInv &quot;Un oeil dans un bocal&quot;&gt;&gt;Vous avez pris le bocal.
-!!&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Un oeil dans un bocal" tags="" position="851,272.5" size="100,100">&lt;&lt;if $bocal==1&gt;&gt;C&#39;est vide, tu l&#39;as bu !&lt;&lt;else&gt;&gt;Il s&#39;agit d&#39;un bocal contenant un oeil baignant dans un liquide saumâtre. Le tout n&#39;est pas très ragoûtant.
+!!&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Un oeil dans un bocal" tags="" position="851,272" size="100,100">&lt;&lt;if $bocal==1&gt;&gt;C&#39;est vide, tu l&#39;as bu !&lt;&lt;else&gt;&gt;Il s&#39;agit d&#39;un bocal contenant un oeil baignant dans un liquide saumâtre. Le tout n&#39;est pas très ragoûtant.
+
 &lt;&lt;button [[Boire le liquide]]&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;endif&gt;&gt;
 
-&lt;&lt;button [[Retour au début|init]]&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Boire le liquide" tags="" position="851,422.5" size="100,100">Vous gagnez 1 point de clairvoyance et 1 point d&#39;expérience !
+&lt;&lt;button [[Retour au début|init]]&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Boire le liquide" tags="" position="851,422" size="100,100">Vous gagnez 1 point de clairvoyance et 1 point d&#39;expérience !
 &lt;&lt;set $clair to $clair+1 ; $exp to $exp+1&gt;&gt;&lt;&lt;set $bocal to 1&gt;&gt;
 !!&lt;&lt;return Back&gt;&gt;
 </tw-passagedata></tw-storydata></div>
