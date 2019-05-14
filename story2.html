@@ -446,6 +446,10 @@ macros.emptySpell = {
 };
 // End Spell list Macros
 
+// fullscreen.min.js, for SugarCube 2, by Chapel
+;setup.fullscreen=function(e){e.requestFullScreen?e.requestFullScreen():e.mozRequestFullScreen?e.mozRequestFullScreen():e.webkitRequestFullScreen&&e.webkitRequestFullScreen()},Macro.add("fullscreen",{handler:function(){var e=$("body").css("background-color");$("html").css("background-color",e),setup.fullscreen(document.documentElement)}}),Macro.add("fullscreenlink",{handler:function(){var e,n,r=$(document.createElement("span")),c=$(document.createElement("a")),t="macro-"+this.name;if(1!==this.args.length)return this.error("incorrect number of arguments");n=this.args[0],c.wiki(n).attr("id","fullscreen-macro-link").ariaClick(function(){e=$("body").css("background-color"),$("html").css("background-color",e),setup.fullscreen(document.documentElement)}),r.append(c).addClass(t).appendTo(this.output)}});
+// end fullscreen.min.js
+
 </script><tw-passagedata pid="1" name="Start game" tags="" position="636,206" size="100,100">Il y a un coffre devant vous. &lt;&lt;if $chest is 1&gt;&gt;Le coffre est déjà ouvert 
 !![[Partir de là]] &lt;&lt;else&gt;&gt;
 !![[Ouvrir le coffre]]&lt;&lt;/if&gt;&gt;
@@ -495,7 +499,11 @@ Music
 &lt;&lt;/link&gt;&gt;  &lt;&lt;link &quot;&lt;&lt;button OFF&gt;&gt;&lt;&lt;/button&gt;&gt;&quot;&gt;&gt;
     &lt;&lt;audio &quot;music&quot; stop&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;&lt;volume&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="StoryInit" tags="" position="1369,25" size="100,100">&lt;&lt;set $chest to 0; $exp to 1 ; $coins to 0 ; $dex to 5 ; $concent to 5 ; $know to 5 ; $bota to 5 ; $obed to 5 ; $invoc to 5 ; $luck to 5 ; $empa to 5 ; $telepath to 5 ; $kinesis to 5 ; $clair to 5 ; $rea to 5 ; $possess to 5 ; $curse to 5&gt;&gt;
+&lt;&lt;volume&gt;&gt;
+
+&lt;&lt;button &#39;Fullscreen Mode&#39;&gt;&gt;
+	&lt;&lt;fullscreen&gt;&gt;
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="StoryInit" tags="" position="1369,25" size="100,100">&lt;&lt;set $chest to 0; $exp to 1 ; $coins to 0 ; $dex to 5 ; $concent to 5 ; $know to 5 ; $bota to 5 ; $obed to 5 ; $invoc to 5 ; $luck to 5 ; $empa to 5 ; $telepath to 5 ; $kinesis to 5 ; $clair to 5 ; $rea to 5 ; $possess to 5 ; $curse to 5&gt;&gt;
 &lt;&lt;set $bocal to 0&gt;&gt;&lt;&lt;set $totalPoints to 10&gt;&gt;
 &lt;&lt;initInv&gt;&gt;&lt;&lt;initSpell&gt;&gt;
 &lt;&lt;cacheaudio &quot;music&quot; &quot;https://cdn.discordapp.com/attachments/575977278199169054/577749493181579274/music.ogg&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Inventory" tags="" position="1046,26" size="100,100">&lt;&lt;invWithLinks&gt;&gt;
