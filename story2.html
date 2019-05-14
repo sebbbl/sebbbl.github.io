@@ -100,7 +100,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Lorelei&#39;s Prophecy" startnode="2" creator="Twine" creator-version="2.3.1" ifid="881CCC31-6507-4FE6-8DD6-3A235FF43A0B" zoom="1" format="SugarCube" format-version="2.28.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css?family=Special+Elite|Stylish');
+	<div id="store-area" hidden><tw-storydata name="Lorelei&#39;s Prophecy" startnode="2" creator="Twine" creator-version="2.3.1" ifid="881CCC31-6507-4FE6-8DD6-3A235FF43A0B" zoom="1" format="SugarCube" format-version="2.28.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css?family=Special+Elite|Stylish|Material+Icons');
 .passage {
     font-family: 'Special Elite', cursive;
     font-size: 24px;
@@ -126,6 +126,16 @@ tw-icon {
     margin: 0;
     padding: 0 1.5em;
 }
+
+#ui-bar-toggle {
+    font-size: 1.2em;
+    line-height: inherit;
+    color: #eee;
+    background-color: transparent;
+    border: 1px solid transparent;
+    right: -1.9em;
+}
+
 html {
     font: 16px/1 Helmet,Freesans,sans-serif;
     background-image: url(https://cdn.discordapp.com/attachments/574649924529160213/577409322628284417/sorciere28bg4.jpg);
@@ -232,9 +242,21 @@ input[type=range]:focus::-ms-fill-upper {
 }
 ::-webkit-scrollbar-button{ display: none; height: 13px; border-radius: 0px; background-color: #AAA; } ::-webkit-scrollbar-button:hover{ background-color: #AAA; } ::-webkit-scrollbar-thumb{ background-color: #b6b6b6; } ::-webkit-scrollbar-thumb:hover{ background-color: #CCC; } ::-webkit-scrollbar-track{ background-color: #efefef; } ::-webkit-scrollbar-track:hover{ background-color: #efefef; } ::-webkit-scrollbar{ width: 8px; }
 
+#ui-bar-toggle:before {
+    content: "\e82e";
+}
 
+#ui-bar.stowed #ui-bar-toggle:before {
+    content: "\e82e";
+}
 
+#ui-bar.stowed {
+    left: -17.7em;
+}
 
+element.style {
+    background-color: #000;
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.history.controls = false;
 // Begin Inventory Macros
 // Original macros by F2Andy: http://strugglingwithtwine.blogspot.ca/2014/03/handling-inventory.html
@@ -494,11 +516,11 @@ macros.emptySpell = {
 &lt;&lt;button [[Main menu|init]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 Music
-&lt;&lt;link &quot;&lt;&lt;button ON&gt;&gt;&lt;&lt;/button&gt;&gt;&quot;&gt;&gt;
+@@font-family: &#39;Material Icons&#39;;&lt;&lt;link &quot;&lt;&lt;button &amp;#xe037;&gt;&gt;&lt;&lt;/button&gt;&gt;&quot;&gt;&gt;
     &lt;&lt;audio &quot;music&quot; loop play&gt;&gt;
-&lt;&lt;/link&gt;&gt;  &lt;&lt;link &quot;&lt;&lt;button OFF&gt;&gt;&lt;&lt;/button&gt;&gt;&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;&lt;&lt;button stop&gt;&gt;&lt;&lt;/button&gt;&gt;&quot;&gt;&gt;
     &lt;&lt;audio &quot;music&quot; stop&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+&lt;&lt;/link&gt;&gt;@@
 &lt;&lt;volume&gt;&gt;
 
 &lt;&lt;button &#39;Fullscreen Mode&#39;&gt;&gt;
@@ -506,7 +528,7 @@ Music
 &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="StoryInit" tags="" position="1369,25" size="100,100">&lt;&lt;set $chest to 0; $exp to 1 ; $coins to 0 ; $dex to 5 ; $concent to 5 ; $know to 5 ; $bota to 5 ; $obed to 5 ; $invoc to 5 ; $luck to 5 ; $empa to 5 ; $telepath to 5 ; $kinesis to 5 ; $clair to 5 ; $rea to 5 ; $possess to 5 ; $curse to 5&gt;&gt;
 &lt;&lt;set $bocal to 0&gt;&gt;&lt;&lt;set $totalPoints to 10&gt;&gt;
 &lt;&lt;initInv&gt;&gt;&lt;&lt;initSpell&gt;&gt;
-&lt;&lt;cacheaudio &quot;music&quot; &quot;https://cdn.discordapp.com/attachments/575977278199169054/577749493181579274/music.ogg&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Inventory" tags="" position="1046,26" size="100,100">&lt;&lt;invWithLinks&gt;&gt;
+&lt;&lt;cacheaudio &quot;music&quot; &quot;https://cdn.discordapp.com/attachments/575977278199169054/577749493181579274/music.ogg&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Inventory" tags="" position="929,24" size="100,100">&lt;&lt;invWithLinks&gt;&gt;
 
 &lt;&lt;button [[Menu|init]]&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;Back&quot; &#96;previous()&#96;&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Cabane" tags="" position="822,383" size="100,100">&lt;&lt;if $inventory.indexOf(&quot;Un oeil dans un bocal&quot;) == -1&gt;&gt;Vous voyez un oeil dans un bocal.
 !![[Prendre le bocal.]]&lt;&lt;else&gt;&gt;Il n&#39;y a pas grand-chose ici.&lt;&lt;endif&gt;&gt;
