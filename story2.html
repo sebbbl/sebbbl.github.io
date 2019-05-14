@@ -257,6 +257,7 @@ input[type=range]:focus::-ms-fill-upper {
 element.style {
     background-color: #000;
 }
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.history.controls = false;
 // Begin Inventory Macros
 // Original macros by F2Andy: http://strugglingwithtwine.blogspot.ca/2014/03/handling-inventory.html
@@ -468,9 +469,61 @@ macros.emptySpell = {
 };
 // End Spell list Macros
 
-// fullscreen.min.js, for SugarCube 2, by Chapel
-;setup.fullscreen=function(e){e.requestFullScreen?e.requestFullScreen():e.mozRequestFullScreen?e.mozRequestFullScreen():e.webkitRequestFullScreen&&e.webkitRequestFullScreen()},Macro.add("fullscreen",{handler:function(){var e=$("body").css("background-color");$("html").css("background-color",e),setup.fullscreen(document.documentElement)}}),Macro.add("fullscreenlink",{handler:function(){var e,n,r=$(document.createElement("span")),c=$(document.createElement("a")),t="macro-"+this.name;if(1!==this.args.length)return this.error("incorrect number of arguments");n=this.args[0],c.wiki(n).attr("id","fullscreen-macro-link").ariaClick(function(){e=$("body").css("background-color"),$("html").css("background-color",e),setup.fullscreen(document.documentElement)}),r.append(c).addClass(t).appendTo(this.output)}});
-// end fullscreen.min.js
+// fullscreen macro set, by chapel; for sugarcube 2
+// version 1.0.0
+
+// fullscreen function
+setup.fullscreen = function (element) {
+    if(element.requestFullScreen) {
+        element.requestFullScreen();
+    } else if(element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if(element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+    }
+}
+
+Macro.add('fullscreen', {
+    handler : function() { 
+
+        
+
+        setup.fullscreen(document.documentElement);
+
+    }
+});
+
+Macro.add('fullscreenlink', {
+    handler : function() { 
+        
+        var $wrapper  = $(document.createElement('span'));
+        var $link     = $(document.createElement('a'));
+        var className = 'macro-' + this.name;
+        var bg;
+        var linkText;
+        
+        if (this.args.length !== 1) {
+            return this.error('incorrect number of arguments');
+        }
+        
+        linkText = this.args[0];
+        
+        $link
+            .wiki(linkText)
+            .attr('id', 'fullscreen-macro-link')
+            .ariaClick( function () {
+                bg = $('body').css('background-color');
+                $('html').css('background-color', bg);
+                setup.fullscreen(document.documentElement);
+            });
+            
+        $wrapper
+            .append($link)
+            .addClass(className)
+            .appendTo(this.output);
+            
+    }
+});
 
 </script><tw-passagedata pid="1" name="Start game" tags="" position="636,206" size="100,100">Il y a un coffre devant vous. &lt;&lt;if $chest is 1&gt;&gt;Le coffre est déjà ouvert 
 !![[Partir de là]] &lt;&lt;else&gt;&gt;
