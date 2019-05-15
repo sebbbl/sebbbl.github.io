@@ -563,9 +563,9 @@ Macro.add('fullscreenlink', {
 |Curse:| $curse &lt;progress @value=&quot;$curse&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
 ----
 @@
-&lt;&lt;button [[Inventory]]&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button [[Spells list]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;if $stats is 1&gt;&gt;&lt;&lt;button [[Inventory]]&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button [[Spells list]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-&lt;&lt;button [[Dashboard|dashboard]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button [[Dashboard|dashboard]]&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;endif&gt;&gt;
 
 Music
 @@font-family: &#39;Material Icons&#39;;&lt;&lt;link &quot;&lt;&lt;button &amp;#xe037;&gt;&gt;&lt;&lt;/button&gt;&gt;&quot;&gt;&gt;
@@ -582,7 +582,7 @@ Music
 &lt;&lt;initInv&gt;&gt;&lt;&lt;initSpell&gt;&gt;
 &lt;&lt;cacheaudio &quot;music&quot; &quot;https://cdn.discordapp.com/attachments/575977278199169054/577749493181579274/music.ogg&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Inventory" tags="" position="1063,256" size="100,100">&lt;&lt;invWithLinks&gt;&gt;
 
-&lt;&lt;button [[Menu|dashboard]]&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;Back&quot; &#96;previous()&#96;&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Cabane" tags="" position="498,337" size="100,100">&lt;&lt;if $inventory.indexOf(&quot;Un oeil dans un bocal&quot;) == -1&gt;&gt;Vous voyez un oeil dans un bocal.
+&lt;&lt;button [[Dashboard|dashboard]]&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;Back&quot; &#96;previous()&#96;&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Cabane" tags="" position="498,337" size="100,100">&lt;&lt;if $inventory.indexOf(&quot;Un oeil dans un bocal&quot;) == -1&gt;&gt;Vous voyez un oeil dans un bocal.
 !![[Prendre le bocal.]]&lt;&lt;else&gt;&gt;Il n&#39;y a pas grand-chose ici.&lt;&lt;endif&gt;&gt;
 !![[Retour au début|dashboard]]
 &lt;&lt;if $spell.indexOf(&quot;Thunder&quot;) == -1&gt;&gt;You learn &lt;&lt;addToSpell Thunder&gt;&gt; spell!&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Prendre le bocal." tags="" position="505,472" size="100,100">&lt;&lt;addToInv &quot;Un oeil dans un bocal&quot;&gt;&gt;Vous avez pris le bocal.
@@ -876,9 +876,9 @@ Remaining Points: &lt;span id=&quot;pointsStat&quot;&gt;10&lt;/span&gt;
 
 </tw-passagedata><tw-passagedata pid="15" name="Spells list" tags="" position="1204,363" size="100,100">&lt;&lt;spellWithLinks&gt;&gt;
 
-&lt;&lt;button [[Menu|dashboard]]&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;Back&quot; &#96;previous()&#96;&gt;&gt;&lt;&lt;/button&gt;&gt;
-</tw-passagedata><tw-passagedata pid="16" name="Thunder" tags="" position="1365,186" size="100,100">blabla</tw-passagedata><tw-passagedata pid="17" name="validstats" tags="" position="817,193" size="100,100">!!Your character skills have been updated, have a nice game !
-&lt;&lt;button [[Main menu|dashboard]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button [[Dashboard|dashboard]]&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;Back&quot; &#96;previous()&#96;&gt;&gt;&lt;&lt;/button&gt;&gt;
+</tw-passagedata><tw-passagedata pid="16" name="Thunder" tags="" position="1365,186" size="100,100">blabla</tw-passagedata><tw-passagedata pid="17" name="validstats" tags="" position="806,153" size="100,100">!!Your character skills have been updated, have a nice game !
+&lt;&lt;button [[Main Dashboard|dashboard]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;set $stats to 1&gt;&gt;
 </tw-passagedata><tw-passagedata pid="18" name="dashboard" tags="" position="705,346" size="100,100">!!Dashboard
 
