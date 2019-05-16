@@ -544,6 +544,7 @@ Macro.add('fullscreenlink', {
 &lt;img src=&quot;https://cdn.discordapp.com/attachments/574649924529160213/576326997706407946/gold.jpg&quot; width=&quot;90%&quot;&gt;
 </tw-passagedata><tw-passagedata pid="3" name="StoryCaption" tags="" position="1208,23" size="100,100">@@text-align: left;font-size: 0.8em;
 
+|HP:         | $hp &lt;progress @value=&quot;$hp&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
 |Exp:         | $exp &lt;progress @value=&quot;$exp&quot; max=&quot;50&quot;&gt;&lt;/progress&gt;|
 |Treasure:| $coins|
 |&lt;br&gt;||
@@ -577,7 +578,7 @@ Music
 
 &lt;&lt;button &#39;Fullscreen Mode&#39;&gt;&gt;
 	&lt;&lt;fullscreen&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="1407,18" size="100,100">&lt;&lt;set $chest to 0; $exp to 1 ; $coins to 0 ; $dex to 5 ; $concent to 5 ; $know to 5 ; $bota to 5 ; $obed to 5 ; $invoc to 5 ; $luck to 5 ; $empa to 5 ; $telepath to 5 ; $kinesis to 5 ; $clair to 5 ; $rea to 5 ; $possess to 5 ; $curse to 5&gt;&gt;
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="1407,18" size="100,100">&lt;&lt;set $hp to 20 ; $chest to 0; $exp to 1 ; $coins to 0 ; $dex to 5 ; $concent to 5 ; $know to 5 ; $bota to 5 ; $obed to 5 ; $invoc to 5 ; $luck to 5 ; $empa to 5 ; $telepath to 5 ; $kinesis to 5 ; $clair to 5 ; $rea to 5 ; $possess to 5 ; $curse to 5&gt;&gt;
 &lt;&lt;set $bocal to 0&gt;&gt;&lt;&lt;set $totalPoints to 10&gt;&gt;
 &lt;&lt;initInv&gt;&gt;&lt;&lt;initSpell&gt;&gt;
 &lt;&lt;cacheaudio &quot;music&quot; &quot;https://cdn.discordapp.com/attachments/575977278199169054/577749493181579274/music.ogg&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Inventory" tags="" position="1198,169" size="100,100">&lt;&lt;invWithLinks&gt;&gt;
@@ -904,7 +905,7 @@ Some places you can go to.
 &lt;img src=&quot;https://media.discordapp.net/attachments/574649924529160213/577958301220864001/loreleitransparent3.png&quot; width=&quot;90%&quot;&gt;
 !![[Let&#39;s start the adventure!|Definecharacterstats]]</tw-passagedata><tw-passagedata pid="20" name="imagemap" tags="" position="1408,142" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/575227288463867917/575972707707912192/loreleiworld.jpg&quot; usemap=&quot;#books&quot;&gt;
 &lt;map name=&quot;books&quot;&gt;
-&lt;area shape=&quot;poly&quot; coords=&quot;460,269,392,327,401,417,462,412,464,464,630,463,671,435,686,376,671,273,545,235&quot; data-passage=&quot;mission2&quot; title=&quot;Cleverworth&quot; /&gt;
+&lt;area shape=&quot;poly&quot; coords=&quot;460,269,392,327,401,417,462,412,464,464,630,463,671,435,686,376,671,273,545,235&quot; data-passage=&quot;mission2&quot; title=&quot;Cloverworth&quot; /&gt;
 &lt;area shape=&quot;rect&quot; coords=&quot;1642,901,1493,847&quot; data-passage=&quot;putridfer&quot; title=&quot;Putridfer&quot; /&gt;&lt;/map&gt;
 </tw-passagedata><tw-passagedata pid="21" name="putridfer" tags="" position="207,508" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/575227288463867917/575960771813441536/putridfer.jpg&quot;&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
