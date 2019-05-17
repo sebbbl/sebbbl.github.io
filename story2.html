@@ -578,7 +578,9 @@ Music
 
 &lt;&lt;button &#39;Fullscreen Mode&#39;&gt;&gt;
 	&lt;&lt;fullscreen&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="1407,18" size="100,100">&lt;&lt;set $hp to 20 ; $chest to 0; $exp to 1 ; $coins to 0 ; $dex to 5 ; $concent to 5 ; $know to 5 ; $bota to 5 ; $obed to 5 ; $invoc to 5 ; $luck to 5 ; $empa to 5 ; $telepath to 5 ; $kinesis to 5 ; $clair to 5 ; $rea to 5 ; $possess to 5 ; $curse to 5&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="1407,18" size="100,100">&lt;&lt;set $hp to 20 ; $chest to 0; $exp to 1 ; $coins to 0 ; $dex to 5 ; $concent to 5 ; $know to 5 ; $bota to 5 ; $obed to 5 ; $invoc to 5 ; $luck to 5 ; $empa to 5 ; $telepath to 5 ; $kinesis to 5 ; $clair to 5 ; $rea to 5 ; $possess to 5 ; $curse to 5&gt;&gt;
 &lt;&lt;set $bocal to 0&gt;&gt;&lt;&lt;set $totalPoints to 10&gt;&gt;
 &lt;&lt;initInv&gt;&gt;&lt;&lt;initSpell&gt;&gt;
 &lt;&lt;cacheaudio &quot;music&quot; &quot;https://cdn.discordapp.com/attachments/575977278199169054/577749493181579274/music.ogg&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Inventory" tags="" position="1198,169" size="100,100">&lt;&lt;invWithLinks&gt;&gt;
@@ -888,24 +890,19 @@ Remaining Points: &lt;span id=&quot;pointsStat&quot;&gt;10&lt;/span&gt;
 [[Market]] - Buy some special objects, magical or not, that will help you in your missions and your fights.
 ----
 !!!Missions
-[[Another mission|mission2]]
+You will find here missions to complete, to get experience, items, and gold of course!
 ----
 @@
 &lt;&lt;set $stats to 1&gt;&gt;
-&lt;&lt;set $time to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="mission2" tags="" position="1395,423" size="100,100">&lt;iframe id=&quot;inlineFrameExample&quot;
-    title=&quot;Inline Frame Example&quot;
-    width=&quot;100%&quot;
-    height=&quot;100%&quot;
-    src=&quot;https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&amp;layer=mapnik&quot;&gt;
-&lt;/iframe&gt;
+&lt;&lt;set $time to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="hidden1" tags="" position="448,505" size="100,100">This house seems empty. There&#39;s just an old chest. It seems closed...
 
-Test timed event :
-
-$timeref
 &lt;&lt;set $hour to Date.now()&gt;&gt;
+&lt;img src=&quot;https://media.discordapp.net/attachments/574649924529160213/579059637106769921/imagesjeu.png&quot; width=&quot;80%&quot;&gt;
 
-&lt;&lt;if $hour lt $timeref+60000&gt;&gt;Not yet...&lt;&lt;endif&gt;&gt;
-&lt;&lt;if $hour gte $timeref+60000 or $chest1 isnot 1&gt;&gt;[[Let&#39;s go !|Open chest]]&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="startgame" tags="" position="737,14" size="100,100">A long time ago, wizards lived in peace. They were led by an assembly of seven witches and wizards who had sworn obedience to the allmighty goddess Lorelei.
+&lt;&lt;if $hour lt $timeref+86400000&gt;&gt;Really closed...&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $hour gte $timeref+86400000 or $chest1 isnot 1&gt;&gt;[[Let&#39;s try to open it!|Open chest]]&lt;&lt;endif&gt;&gt;
+
+[[Get out of here|putridfer]]</tw-passagedata><tw-passagedata pid="16" name="startgame" tags="" position="737,14" size="100,100">A long time ago, wizards lived in peace. They were led by an assembly of seven witches and wizards who had sworn obedience to the allmighty goddess Lorelei.
 
 &lt;img src=&quot;https://media.discordapp.net/attachments/574649924529160213/578313308457664513/imagesjeu.png&quot; width=&quot;90%&quot;&gt;
 !![[Next|part2]]</tw-passagedata><tw-passagedata pid="17" name="part2" tags="" position="600,19" size="100,100">But one day, a greedy wizard named Aroth wanted more. He tried to seize Lorelei&#39;s power. The battle was terrible, but Lorelei won. Aroth was killed, but Lorelei did not intend to stop there.
@@ -920,10 +917,17 @@ $timeref
 &lt;area shape=&quot;rect&quot; coords=&quot;1642,901,1493,847&quot; data-passage=&quot;putridfer&quot; title=&quot;Putridfer&quot; /&gt;&lt;/map&gt;
 </tw-passagedata><tw-passagedata pid="21" name="putridfer" tags="" position="207,508" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/575227288463867917/575960771813441536/putridfer.jpg&quot; usemap=&quot;#putridfer&quot;&gt;
 &lt;map name=&quot;putridfer&quot;&gt;
+&lt;area shape=&quot;poly&quot; coords=&quot;1307,250,1297,261,1315,273,1327,261&quot; data-passage=&quot;hidden1&quot; /&gt;
 &lt;area shape=&quot;poly&quot; coords=&quot;1034,421,1005,468,1047,528,1071,607,1198,562,1179,507,1088,395&quot; data-passage=&quot;Market&quot; title=&quot;Market&quot; /&gt;&lt;/map&gt;
 
 
-</tw-passagedata><tw-passagedata pid="22" name="Academy" tags="" position="597,279" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="23" name="Market" tags="" position="724,342" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="24" name="Open chest" tags="" position="1395,573" size="100,100">Nothing.
+</tw-passagedata><tw-passagedata pid="22" name="Academy" tags="" position="597,279" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="23" name="Market" tags="" position="724,342" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="24" name="Open chest" tags="" position="607,505" size="100,100">&lt;&lt;set $drop to random(1, 10)&gt;&gt; &lt;&lt;set $coins to $coins+$drop&gt;&gt;You got $drop Gold from this chest. You have now $coins Gold !
+
+But that&#39;s not all : there&#39;s a note. It says : 
+!!!This enchanted chest can be opened only once per 24 hours. And there will always be something in...
+
+&lt;img src=&quot;https://cdn.discordapp.com/attachments/574649924529160213/576326997706407946/gold.jpg&quot; width=&quot;90%&quot;&gt;
+
 &lt;&lt;set $time to Date.now()&gt;&gt;
 &lt;&lt;set $timeref to Date.now()&gt;&gt;
 &lt;&lt;set $chest1 to 1&gt;&gt;
