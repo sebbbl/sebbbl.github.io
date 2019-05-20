@@ -889,14 +889,16 @@ Remaining Points: &lt;span id=&quot;pointsStat&quot;&gt;10&lt;/span&gt;
 !!!Places
 [[Academy]] - There you will be able to hire a mentor to enhance your skills and become more powerful.
 
+[[Library]] - Where you can find useful clues for your missions. Just read some books!
+
 [[Market]] - Buy some special objects, magical or not, that will help you in your missions and your fights.
-----
-!!!Missions
-You will find here missions to complete, to get experience, items, and gold of course!
+
+[[Tavern]] - Have a drink, and maybe meet interesting people.
+
 ----
 @@
 &lt;&lt;set $stats to 1&gt;&gt;
-&lt;&lt;set $time to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="hidden1" tags="" position="448,505" size="100,100">This house seems empty. There&#39;s just an old chest. It seems closed...
+&lt;&lt;set $time to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="hidden1" tags="" position="209,337" size="100,100">This house seems empty. There&#39;s just an old chest. It seems closed...
 
 &lt;&lt;set $hour to Date.now()&gt;&gt;
 &lt;img src=&quot;http://faucetmaniacs.online/wp-content/uploads/2019/05/coffre.png&quot; width=&quot;80%&quot;&gt;
@@ -923,7 +925,10 @@ You will find here missions to complete, to get experience, items, and gold of c
 &lt;area shape=&quot;poly&quot; coords=&quot;1034,421,1005,468,1047,528,1071,607,1198,562,1179,507,1088,395&quot; data-passage=&quot;Market&quot; title=&quot;Market&quot; /&gt;&lt;/map&gt;
 
 
-</tw-passagedata><tw-passagedata pid="22" name="Academy" tags="" position="597,279" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="23" name="Market" tags="" position="724,342" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="24" name="Open chest" tags="" position="607,505" size="100,100">&lt;&lt;set $drop to random(1, 10)&gt;&gt; &lt;&lt;set $coins to $coins+$drop&gt;&gt;You got $drop Gold from this chest. You have now $coins Gold !
+</tw-passagedata><tw-passagedata pid="22" name="Academy" tags="" position="597,279" size="100,100">&lt;img src=&quot;http://faucetmaniacs.online/wp-content/uploads/2019/05/academy.png&quot; width=&quot;90%&quot;&gt;
+&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Market" tags="" position="724,342" size="100,100">Soon.
+
+&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Open chest" tags="" position="368,337" size="100,100">&lt;&lt;set $drop to random(1, 10)&gt;&gt; &lt;&lt;set $coins to $coins+$drop&gt;&gt;You got $drop Gold from this chest. You have now $coins Gold !
 
 But that&#39;s not all : there&#39;s a note. It says : 
 !!!This enchanted chest can be opened only once per 24 hours. And there will always be something in...
@@ -933,6 +938,41 @@ But that&#39;s not all : there&#39;s a note. It says :
 &lt;&lt;set $time to Date.now()&gt;&gt;
 &lt;&lt;set $timeref to Date.now()&gt;&gt;
 &lt;&lt;set $chest1 to 1&gt;&gt;
+&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="A strange encounter" tags="" position="952,720" size="100,100">It was a cold and rainy day. Kerry, the tavern keeper, had said it would be better to stay by the fireplace. But this day would be different anyway. And this man, sitting at the back of the room, didn&#39;t mean anything good to you.
+
+Hidden under the hood of his thick coat, he contrasted with the usual drunks you could meet here. But as he looked up, you noticed that he was staring at you.
+
+He hadn&#39;t touched his pint, and you quickly realized that he wasn&#39;t there just to get drunk. He looked perfectly lucid, and serene, despite the noisy atmosphere here.
+
+[[Go to see this strange man]]
+</tw-passagedata><tw-passagedata pid="26" name="Go to see this strange man" tags="" position="1101,670" size="100,100">After all, what were you risking to ask him what that look meant? As you approached, there was a great stir on the side, but too late. A completely drunk man collapsed on you without you being able to avoid him. You got stuck under that wine bag, and by the time you got up, the stranger was gone.
+
+A few hours later, as the last guests left the tavern, fatigue reminded you to your room. As you walked towards the stairs, a piece of paper abandoned under the chair of the mysterious stranger caught your attention.
+&lt;&lt;set $encounter to 1&gt;&gt;
+[[You pick up the piece of paper]]
+[[Leave|dashboard]]</tw-passagedata><tw-passagedata pid="27" name="You pick up the piece of paper" tags="" position="1236,621" size="100,100">Well, it is blank. What does it mean? Did this man leave it intentionally? You decide to go to bed anyway...
+
+&lt;&lt;addToInv &quot;a blank paper&quot;&gt;&gt;You put the paper in your bag.
+
+[[Leave|dashboard]] </tw-passagedata><tw-passagedata pid="28" name="Library" tags="" position="866,443" size="100,100">&lt;img src=&quot;http://faucetmaniacs.online/wp-content/uploads/2019/05/library.png&quot; width=&quot;90%&quot;&gt;
+&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="a blank paper" tags="" position="1384,774.8999938964844" size="100,100">&lt;&lt;if $paperspell is 1&gt;&gt;!!There&#39;s some place in Putridfer which can help you.
+!!Just find the eternal chest, and it will help you to get what you need.
+
+[[Back to inventory|Inventory]]&lt;&lt;else&gt;&gt;Hum... What could you do with this? Wait a minute, what if it was not really blank? Maybe a spell could reveal something?
+
+You decide to cast a spell to reveal this note&#39;s secret, if there&#39;s any.
+
+[[Cast the spell]]&lt;&lt;endif&gt;&gt;
+</tw-passagedata><tw-passagedata pid="30" name="Cast the spell" tags="" position="1384,924.8999938964844" size="100,100">A revelation spell is quite simple to cast. 16 points are enough to get it to work. You have $clair clairvoyance points, it may help you.&lt;&lt;set $spell to random(1, 20)+$clair&gt;&gt;
+
+&lt;span id=&quot;cast&quot;&gt;&lt;&lt;click &quot;Cast the spell.&quot;&gt;&gt;&lt;&lt;replace &quot;#cast&quot;&gt;&gt;You got a score of $spell.
+&lt;&lt;if $spell gte 16&gt;&gt;It worked! You earn 1 EXP point! &lt;&lt;set $exp to $exp+1&gt;&gt;&lt;&lt;set $paperspell to 1&gt;&gt;
+[[Let&#39;s see this sheet of paper...|a blank paper]]&lt;&lt;else&gt;&gt;Too bad, it didn&#39;t work... Seems this paper is useless. &lt;&lt;removeFromInv &quot;a blank paper&quot;&gt;&gt;&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;/replace&gt;&gt;&lt;&lt;/click&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="31" name="Let&#39;s see this sheet of paper..." tags="" position="692,1305.8999938964844" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="32" name="Let&#39;s see this sheet of paper...|" tags="" position="812,1305.8999938964844" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="33" name="Tavern" tags="" position="697,627" size="100,100">&lt;img src=&quot;http://faucetmaniacs.online/wp-content/uploads/2019/05/tavern.png&quot; width=&quot;90%&quot;&gt;
+
+&lt;&lt;if $encounter isnot 1&gt;&gt;[[A strange man|A strange encounter]]&lt;&lt;endif&gt;&gt;
+
 &lt;&lt;return Back&gt;&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
