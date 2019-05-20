@@ -264,6 +264,7 @@ element.style {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.saves.autosave = true;
 Config.saves.autoload = true;
 Config.saves.slots = 3;
@@ -535,6 +536,7 @@ Macro.add('fullscreenlink', {
             
     }
 });
+
 
 
 
@@ -955,7 +957,7 @@ A few hours later, as the last guests left the tavern, fatigue reminded you to y
 &lt;&lt;addToInv &quot;a blank paper&quot;&gt;&gt;You put the paper in your bag.
 
 [[Leave|dashboard]] </tw-passagedata><tw-passagedata pid="28" name="Library" tags="" position="866,443" size="100,100">&lt;img src=&quot;http://faucetmaniacs.online/wp-content/uploads/2019/05/library.png&quot; width=&quot;90%&quot;&gt;
-&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="a blank paper" tags="" position="1384,774.8999938964844" size="100,100">&lt;&lt;if $paperspell is 1&gt;&gt;!!There&#39;s some place in Putridfer which can help you.
+&lt;&lt;return Back&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="a blank paper" tags="" position="1384,774" size="100,100">&lt;&lt;if $paperspell is 1&gt;&gt;!!There&#39;s some place in Putridfer which can help you.
 !!Just find the eternal chest, and it will help you to get what you need.
 
 [[Back to inventory|Inventory]]&lt;&lt;else&gt;&gt;Hum... What could you do with this? Wait a minute, what if it was not really blank? Maybe a spell could reveal something?
@@ -963,13 +965,13 @@ A few hours later, as the last guests left the tavern, fatigue reminded you to y
 You decide to cast a spell to reveal this note&#39;s secret, if there&#39;s any.
 
 [[Cast the spell]]&lt;&lt;endif&gt;&gt;
-</tw-passagedata><tw-passagedata pid="30" name="Cast the spell" tags="" position="1384,924.8999938964844" size="100,100">A revelation spell is quite simple to cast. 16 points are enough to get it to work. You have $clair clairvoyance points, it may help you.&lt;&lt;set $spell to random(1, 20)+$clair&gt;&gt;
+</tw-passagedata><tw-passagedata pid="30" name="Cast the spell" tags="" position="1384,924" size="100,100">A revelation spell is quite simple to cast. 14 points are enough to get it to work. You have $clair clairvoyance points, it may help you.&lt;&lt;set $spell to random(1, 20)+$clair&gt;&gt;
 
 &lt;span id=&quot;cast&quot;&gt;&lt;&lt;click &quot;Cast the spell.&quot;&gt;&gt;&lt;&lt;replace &quot;#cast&quot;&gt;&gt;You got a score of $spell.
-&lt;&lt;if $spell gte 16&gt;&gt;It worked! You earn 1 EXP point! &lt;&lt;set $exp to $exp+1&gt;&gt;&lt;&lt;set $paperspell to 1&gt;&gt;
+&lt;&lt;if $spell gte 14&gt;&gt;It worked! You earn 1 EXP point! &lt;&lt;set $exp to $exp+1&gt;&gt;&lt;&lt;set $paperspell to 1&gt;&gt;
 [[Let&#39;s see this sheet of paper...|a blank paper]]&lt;&lt;else&gt;&gt;Too bad, it didn&#39;t work... Seems this paper is useless. &lt;&lt;removeFromInv &quot;a blank paper&quot;&gt;&gt;&lt;&lt;endif&gt;&gt;
 
-&lt;&lt;/replace&gt;&gt;&lt;&lt;/click&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="31" name="Let&#39;s see this sheet of paper..." tags="" position="692,1305.8999938964844" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="32" name="Let&#39;s see this sheet of paper...|" tags="" position="812,1305.8999938964844" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="33" name="Tavern" tags="" position="697,627" size="100,100">&lt;img src=&quot;http://faucetmaniacs.online/wp-content/uploads/2019/05/tavern.png&quot; width=&quot;90%&quot;&gt;
+&lt;&lt;/replace&gt;&gt;&lt;&lt;/click&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="31" name="Let&#39;s see this sheet of paper..." tags="" position="692,1305" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="32" name="Let&#39;s see this sheet of paper...|" tags="" position="812,1305" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="33" name="Tavern" tags="" position="697,627" size="100,100">&lt;img src=&quot;http://faucetmaniacs.online/wp-content/uploads/2019/05/tavern.png&quot; width=&quot;90%&quot;&gt;
 
 &lt;&lt;if $encounter isnot 1&gt;&gt;[[A strange man|A strange encounter]]&lt;&lt;endif&gt;&gt;
 
